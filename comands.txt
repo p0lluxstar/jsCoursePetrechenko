@@ -1,0 +1,7 @@
+document.write('answer');
+
+GIT 
+git --initial
+git config --global user.name "Evgheniy"
+git config --global user.email evgeniy@evgeniy.ru
+git status

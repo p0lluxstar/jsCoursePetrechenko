@@ -5,3 +5,11 @@ git --initial
 git config --global user.name "Evgheniy"
 git config --global user.email evgeniy@evgeniy.ru
 git status
+git add -A или git add name.txt или git add *txt
+git commit -a -m"first commit"
+git log
+git clone urlАдрес имяПроекта
+git push (обновляет в githup)
+git pull (обновляет из githup)
+
+Если при git push ошибка вызванная различаем между локальным и удаленном репозиториями тогда - вводим название коммита, Ctr+c два раза, затем ":wq!". Произойдет слияние этих репозиторий.

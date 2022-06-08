@@ -24,6 +24,16 @@ const personalMovieDB = {
     privat: false
 };
 
+if(personalMovieDB.count < 10){
+    console.log('Просмотрено довольно мало фильмов');
+} else if ( personalMovieDB.count >= 10 && personalMovieDB.count < 30){
+    console.log('Вы классический зритель');
+} else if (personalMovieDB.count >= 30) {
+    console.log('Вы киноман');
+} else{
+    console.log('Произошла ошибка');
+}
+
 // присваеваем объекту свойтва и значение и проверка условий заполнения полей. в случае не выполнения условий вопрос повторяется
 
 for ( let i = 0; i < 2; i++ ){
@@ -37,5 +47,7 @@ for ( let i = 0; i < 2; i++ ){
         personalMovieDB.movies[answerLastMovies] = estimationMovies;
     }
 }
+
+
 
 console.log(personalMovieDB.movies);

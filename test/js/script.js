@@ -1,18 +1,15 @@
 'use strict';
 
-const personalMovieDB = {
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
+const aaa = {
+    a: false,
+    b: function(){
+        if (a){
+            a = true; 
+        } else {
+            a = false;
+        }
+    }
+
 };
 
-function writeYourGenres(){
-
-    for (let i = 1; i <= 3; i++){
-    const answerGenres = prompt(`Ваш любимый жанр под номером ${i}?`, '');
-    personalMovieDB.genres[i - 1] = answerGenres;
-    } 
-}
-
-writeYourGenres();
+console.log(aaa.a);

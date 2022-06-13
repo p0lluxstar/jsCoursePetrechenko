@@ -1,29 +1,41 @@
 "use strict";
 
-const str = 'test';
-console.log(str.length); // 4  показыает длину строки
+/*
+JS Объективно-ориентированный язык программирования. Главным является объект. Любые конструкции прототипно наследуются от объектов. Прототипность это простыми словами способность наследовать свойства от главного объекта (прототипа).
 
-console.log(str.toUpperCase()); // TEST все символы будут прописаны в верхнем ригистре, важно понимамать что он не меняет переменную str, оно возвращает новое значение, которое мы дальше может как то использовать
+JS можно назвать протатипно-ориентированным языком, это частный случай ООП, один из его стилей.
+*/
 
-console.log(str.toLowerCase()); // test все символы будут прописаны в нижем ригистре
+let str = 'some';
+let strObj = new String(str);
 
-let fruit = 'Some fruit';
-console.log(fruit.indexOf('f')); // 5 показывает на какой позиции находится буква f. Можно передовать слово целиком. По другому это называют - поиск под строки.
-
-const logg = 'Hello world';
-console.log(logg.slice(6, 11)); // world вырезает символы, в скобках указано с какой позиции и до какой вырезать текст. Можно использовать отрицательные значения. Это значит что позиция будет отсчитывается с правой стороны строки.
-
-console.log(logg.substring(6, 7)); // w тоже вырезает символы
-
-const arr = [1, 2, 3];
-console.log(arr.length); // показывает количество элементов массива
+console.log(typeof(str)); // string
+console.log(typeof(strObj)); // object
 
 
-// числа
 
-const num = 12.2;
-console.log(Math.round(num)); // 12 округлять до целых чисел
+const car = {
+    whell: 4,
+}
 
-const test = '12.2px';
-console.log(parseInt(test)); // 12 переводит текст в число и как бы строга обрезается
-console.log(parseFloat(test)); // 12.2 переводит текст в число c плавающей точкой, т.е. с дробными значениями
+const newCar = Object.create(car); 
+
+// использование прототипа, старый способ, сейчас лучше не использовать
+
+// newCar.__proto__ = car;
+
+// console.log(newCar.whell); // 4
+
+// новый способ
+
+Object.setPrototypeOf(newCar, car); // установили протоип car для newCar, т.е. car передал все свои значения newCar
+console.log(newCar.whell); //4
+
+const cityes = {
+    a: 'Moscow',
+    b: 'Kaluga'
+}
+
+const newCityes = Object.create(cityes); // А эта команда сразу создает новый объект newCityes и устанавливает, что cityes будет его прототипом, который будет передавать все свои значения newCityes
+
+console.log(cityes); // { a: 'Moscow', b: 'Kaluga' }

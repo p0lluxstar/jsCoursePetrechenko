@@ -1,15 +1,7 @@
 'use strict';
 
-const aaa = {
-    a: false,
-    b: function(){
-        if (a){
-            a = true; 
-        } else {
-            a = false;
-        }
-    }
+const a = ['c', 'w', 'a'];
 
-};
-
-console.log(aaa.a);
+a.forEach((item, i, bb) => {
+    console.log(`${item} - ${i}, ${bb}`)
+});

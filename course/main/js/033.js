@@ -1,28 +1,53 @@
 "use strict";
 
 /*
-В каждой выполняемой функции, блока кода и скрипта есть связанные с ними внутренние , т.е. скрытый от нас, объекты, который называется лексическое окружение. Есть внутренние(локальное) лексическое окружение и внешнее(глобальное).
-
-Замыкание функции - это сама функция со всеми переменными, которые ей доступны. Другими словами елси функция не находит переменную у себя внутри, она начинает искать ее среди глобальных переменных.
-По другому замыкание это функция, которая запоменает свои внешние переменные и может получить к ним доступ.
-
-Каждый вызов функции это создание нового лексического окружения с своими локальными переменными и параметрами.
+Динамическая типизация это возможность одного типа данных превращаться в другой.
+0, '', null, underfined, Nan; - это всегда false, все осатльное true. Пустые массивы, объекты тоже true.
+Примеры изменения типа данных.
 */
 
-function createCounter(){
-    let counter = 0;
+// to string
 
-    const myFunction = function(){
-        counter = counter + 1;
-        return counter;
-    }
+// 1 
+console.log(typeof(String(null))); //string, преобразование null в строку
+console.log(typeof(String(4))); //string, преобразование null в строку
 
-    return myFunction;
+// 2
+console.log(typeof(null + '')); //string. Всегда все что складывается со строкой преващается в строку
+
+const num = 5;
+console.log('http://vk.com/catalog/' + num); // пример использования динамичесой типизации
+
+// to number
+
+// 1
+console.log(typeof(Number('4'))); //number
+
+// 2
+console.log(typeof(+'5')); //number, унарный + меняет строку на цифру
+
+// 3
+console.log(typeof(parseInt('15px', 10))); //number, 10 это значит в десятичной системе
+
+// to boolean
+
+// 0, '', null, underfined, Nan; - это всегда false, все осатльное true. Пустые массивы, объекты тоже true
+
+// 1 Нативное преобразование 
+let a = null;
+
+if (a){
+    console.log('hi'); // это не сработает потому что в if приходит null, т.е. false
 }
 
-const increment = createCounter();
-const c1 = increment();
-const c2 = increment();
-const c3 = increment();
+a = 1;
 
-console.log(c1, c2, c3); //1 2 3
+if (a){
+    console.log('hi'); // hi
+}
+
+// 2
+console.log(typeof(Boolean('4'))); //boolean
+
+// 3
+console.log(typeof(!!'hi')); //bollean

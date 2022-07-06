@@ -1,0 +1,39 @@
+.formNewFilms{
+    width: 270px;
+    float: left;
+}
+
+.promo__interactive-title, span, .adding__input {
+    margin-bottom: 15px;
+}
+
+input{
+    height: 25px;
+    background: rgba(196,196,196,0.29);
+    border: 1px solid rgba(0,0,0,0.19);
+    display: block;
+}
+
+.list {
+    overflow: hidden;
+    width: 300px;
+}
+
+.promo__interactive-list{
+    list-style-type: none;
+}
+
+li.promo__interactive-item{
+    margin-bottom: 5px;
+    border-bottom: 1px dotted black;
+}
+
+.delete {
+    cursor:pointer;
+    display: block;
+    background:url("../img/trash.png") center center/cover no-repeat;
+    width:25px;
+    height:20px;
+    float:right;
+    transform:translateX(30%);
+}
